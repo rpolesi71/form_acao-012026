@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Avaliação formação e ação - Prof. Reginaldo Polesi - Q03</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; padding: 15px; color: #333; }
+        .container { max-width: 800px; background: white; margin: auto; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        
+        h1 { 
+            color: #1a73e8; 
+            background-color: #e8f0fe; 
+            border-bottom: 3px solid #1a73e8; 
+            padding: 15px 10px; 
+            text-align: center; 
+            margin-bottom: 20px; 
+            font-size: 24px; 
+            border-radius: 8px; 
+        }
+
+        .campo-nome { 
+            margin-bottom: 20px; 
+            padding: 12px; 
+            background: #e8f0fe; 
+            border-left: 5px solid #1a73e8; 
+            border-radius: 4px; 
+            color: #1a73e8;
+            font-weight: bold;
+        }
+
+        input[type="text"] { padding: 8px; width: 280px; border: 1px solid #ddd; border-radius: 4px; font-size: 15px; }
+        
+        .questao { margin-bottom: 15px; padding: 5px; }
+        hr { border: 0; border-top: 1px solid #eee; margin: 15px 0; }
+        
+        .enunciado { font-weight: bold; margin-bottom: 5px; color: #1a73e8; font-size: 15px; }
+        .alternativas { list-style: none; padding: 0; margin: 0; }
+        .alternativas li { margin-bottom: 2px; padding: 3px 8px; border-radius: 4px; display: flex; align-items: center; font-size: 14px; transition: 0.2s; }
+        
+        .feedback-icon { font-weight: bold; margin-left: 8px; font-size: 1.1em; }
+        .certo { color: #27ae60 !important; background-color: #eafaf1; }
+        .errado { color: #e74c3c !important; background-color: #fdedec; }
+        
+        button { 
+            background-color: #e8f0fe; 
+            color: #1a73e8; 
+            border: 2px solid #1a73e8; 
+            padding: 12px; 
+            font-size: 16px; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            width: 100%; 
+            margin-top: 20px; 
+            font-weight: bold; 
+            transition: 0.3s;
+        }
+        button:hover { background-color: #d2e3fc; }
+        
+        #resultado { 
+		margin-top: 25px; 
+		padding: 15px; 
+		font-size: 20px; 
+		text-align: center; 
+		border: 2px solid #1a73e8; 
+		border-radius: 8px; 
+		display: none; 
+		font-weight: bold; 
+		}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>
+        2026 - Form Ação | 1tri | Lógica Computacional<br>
+        Turma: NG - Rafael Roger Nora<br>
+        Simulando uma Avaliação<br>
+        <b>Os Pré-Socráticos</b><br>
+        Prof. Reginaldo Polesi
+    </h1>
+    
+    <div class="campo-nome">
+        <label for="nome"><strong>ESTUDANTE:</strong> </label>
+        <input type="text" id="nome" placeholder="Digite seu nome...">
+    </div>
+
+    <form id="quizForm">
+        <div class="questao" data-correta="C">
+            <p class="enunciado">1. O que os filósofos pré-socráticos buscavam ao investigar a "Physis"?</p>
+            <ul class="alternativas">
+                <li><input type="radio" name="q1" value="A"> A) Provar a existência dos deuses do Olimpo através da lógica.</li>
+                <li><input type="radio" name="q1" value="B"> B) Criar leis políticas para as novas cidades-estado.</li>
+                <li><input type="radio" name="q1" value="C"> C) Encontrar o princípio racional e natural (Arché) de todas as coisas.</li>
+                <li><input type="radio" name="q1" value="D"> D) Desenvolver técnicas de retórica para vencer debates.</li>
+            </ul>
+        </div>
+        <hr>
+
+        <div class="questao" data-correta="A">
+            <p class="enunciado">2. Tales de Mileto, considerado o primeiro filósofo, afirmava que a "Arché" era:</p>
+            <ul class="alternativas">
+                <li><input type="radio" name="q2" value="A"> A) A Água.</li>
+                <li><input type="radio" name="q2" value="B"> B) O Fogo.</li>
+                <li><input type="radio" name="q2" value="C"> C) O Átomos.</li>
+                <li><input type="radio" name="q2" value="D"> D) O Ar.</li>
+            </ul>
+        </div>
+        <hr>
+
+        <div class="questao" data-correta="D">
+            <p class="enunciado">3. Heráclito de Éfeso é conhecido pela frase "Tudo flui". Sua filosofia baseava-se em:</p>
+            <ul class="alternativas">
+                <li><input type="radio" name="q3" value="A"> A) Um mundo estático e imutável.</li>
+                <li><input type="radio" name="q3" value="B"> B) Números como a base da realidade.</li>
+                <li><input type="radio" name="q3" value="C"> C) A negação de que os sentidos podem perceber a verdade.</li>
+                <li><input type="radio" name="q3" value="D"> D) Na constante mudança (devir) e no conflito entre os opostos.</li>
+            </ul>
+        </div>
+        <hr>
+
+        <div class="questao" data-correta="B">
+            <p class="enunciado">4. Ao contrário de Heráclito, Parmênides de Eleia defendia que:</p>
+            <ul class="alternativas">
+                <li><input type="radio" name="q4" value="A"> A) O ser é feito de quatro elementos (água, terra, fogo e ar).</li>
+                <li><input type="radio" name="q4" value="B"> B) O ser é único, imóvel e a mudança é apenas uma ilusão dos sentidos.</li>
+                <li><input type="radio" name="q4" value="C"> C) A verdade está no movimento contínuo dos átomos.</li>
+                <li><input type="radio" name="q4" value="D"> D) O universo surgiu do caos absoluto e sem regras.</li>
+            </ul>
+        </div>
+        <hr>
+
+        <div class="questao" data-correta="D">
+            <p class="enunciado">5. Para Pitágoras e seus seguidores, a essência de todas as coisas era encontrada nos:</p>
+            <ul class="alternativas">
+                <li><input type="radio" name="q5" value="A"> A) Sentimentos humanos.</li>
+                <li><input type="radio" name="q5" value="B"> B) Gases atmosféricos.</li>
+                <li><input type="radio" name="q5" value="C"> C) Mitos heroicos.</li>
+                <li><input type="radio" name="q5" value="D"> D) Números e relações matemáticas.</li>
+            </ul>
+        </div>
+        <hr>
+
+        <div class="questao" data-correta="B">
+            <p class="enunciado">6. Anaximandro de Mileto propôs um princípio abstrato e infinito chamado:</p>
+            <ul class="alternativas">
+                <li><input type="radio" name="q6" value="A"> A) Logos.</li>
+                <li><input type="radio" name="q6" value="B"> B) Ápeiron.</li>
+                <li><input type="radio" name="q6" value="C"> C) Átomo.</li>
+                <li><input type="radio" name="q6" value="D"> D) Vácuo.</li>
+            </ul>
+        </div>
+        <hr>
+
+        <div class="questao" data-correta="C">
+            <p class="enunciado">7. Demócrito e Leucipo foram os fundadores do Atomismo. Eles acreditavam que:</p>
+            <ul class="alternativas">
+                <li><input type="radio" name="q7" value="A"> A) A realidade é composta apenas de ideias divinas.</li>
+                <li><input type="radio" name="q7" value="B"> B) A matéria pode ser dividida infinitamente.</li>
+                <li><input type="radio" name="q7" value="C"> C) O universo é formado por partículas indivisíveis e vácuo.</li>
+                <li><input type="radio" name="q7" value="D"> D) A água é o componente básico de cada átomo.</li>
+            </ul>
+        </div>
+        <hr>
+
+        <div class="questao" data-correta="A">
+            <p class="enunciado">8. Qual a principal diferença entre o pensamento mítico e o pensamento pré-socrático?</p>
+            <ul class="alternativas">
+                <li><input type="radio" name="q8" value="A"> A) A substituição de explicações sobrenaturais por observações lógicas e naturais.</li>
+                <li><input type="radio" name="q8" value="B"> B) O uso de poesias em vez de textos científicos.</li>
+                <li><input type="radio" name="q8" value="C"> C) A crença de que o homem é o centro do universo (Antropocentrismo).</li>
+                <li><input type="radio" name="q8" value="D"> D) A proibição de falar sobre a natureza dentro das cidades.</li>
+            </ul>
+        </div>
+        <hr>
+
+        <div class="questao" data-correta="C">
+            <p class="enunciado">9. Anaxímenes, buscando uma arché mais sutil que a água, definiu como princípio:</p>
+            <ul class="alternativas">
+                <li><input type="radio" name="q9" value="A"> A) A terra firme.</li>
+                <li><input type="radio" name="q9" value="B"> B) A mente (Nous).</li>
+                <li><input type="radio" name="q9" value="C"> C) O Ar (Pneuma).</li>
+                <li><input type="radio" name="q9" value="D"> D) O magnetismo.</li>
+            </ul>
+        </div>
+        <hr>
+
+        <div class="questao" data-correta="B">
+            <p class="enunciado">10. Como a lógica pré-socrática se relaciona com o pensamento computacional moderno?</p>
+            <ul class="alternativas">
+                <li><input type="radio" name="q10" value="A"> A) Não há relação, pois a filosofia é subjetiva.</li>
+                <li><input type="radio" name="q10" value="B"> B) Na busca por padrões, estruturas fundamentais e regras lógicas que explicam sistemas complexos.</li>
+                <li><input type="radio" name="q10" value="C"> C) Apenas no uso de números pelos pitagóricos.</li>
+                <li><input type="radio" name="q10" value="D"> D) No fato de ambos utilizarem a eletricidade como princípio básico.</li>
+            </ul>
+        </div>
+
+        <button type="button" onclick="corrigir()">FINALIZAR E VER RESULTADO</button>
+    </form>
+
+    <div id="resultado"></div>
+</div>
+
+<script>
+    function corrigir() {
+        const nomeInput = document.getElementById('nome');
+        const nome = nomeInput.value || "Estudante";
+        const questoes = document.querySelectorAll('.questao');
+        let acertos = 0;
+
+        document.querySelectorAll('.alternativas li').forEach(li => {
+            li.classList.remove('certo', 'errado');
+            const icon = li.querySelector('.feedback-icon');
+            if (icon) icon.remove();
+        });
+
+        questoes.forEach((q) => {
+            const correta = q.getAttribute('data-correta');
+            const selecionada = q.querySelector('input[type="radio"]:checked');
+            
+            if (selecionada) {
+                const liPai = selecionada.parentElement;
+                if (selecionada.value === correta) {
+                    acertos++;
+                    liPai.classList.add('certo');
+                    liPai.insertAdjacentHTML('beforeend', ' <span class="feedback-icon">✓</span>');
+                } else {
+                    liPai.classList.add('errado');
+                    liPai.insertAdjacentHTML('beforeend', ' <span class="feedback-icon">✗</span>');
+                }
+            }
+        });
+
+        const resDiv = document.getElementById('resultado');
+        resDiv.style.display = 'block';
+        
+        let mensagemStatus = acertos >= 6 ? "Aprovado!" : "Tente novamente.";
+        resDiv.style.backgroundColor = acertos >= 6 ? '#eafaf1' : '#fdedec';
+        resDiv.style.color = acertos >= 6 ? '#27ae60' : '#e74c3c';
+        
+        resDiv.innerHTML = `Parabéns ${nome}, você acertou ${acertos}/10 questões.<br>${mensagemStatus}`;
+        
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
