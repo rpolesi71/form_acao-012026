@@ -2,19 +2,38 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Avaliação formação e ação - LÓGICA COMPUTACIONAL - Prof. Reginaldo Polesi</title>
+    <title>Avaliação formação e ação - Prof. Reginaldo Polesi - Q01</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; padding: 15px; color: #333; }
         .container { max-width: 800px; background: white; margin: auto; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        h1 { color: #1a73e8; border-bottom: 3px solid #1a73e8; padding-bottom: 10px; text-align: center; margin-bottom: 20px; font-size: 24px; }
-        .campo-nome { margin-bottom: 20px; padding: 12px; background: #f8f9fa; border-left: 5px solid #1a73e8; border-radius: 4px; }
+        
+        h1 { 
+            color: #636b2f; 
+            background-color: #FDFBD4; 
+            border-bottom: 3px solid #636b2f; 
+            padding: 15px 10px; 
+            text-align: center; 
+            margin-bottom: 20px; 
+            font-size: 24px; 
+            border-radius: 8px; 
+        }
+
+        .campo-nome { 
+            margin-bottom: 20px; 
+            padding: 12px; 
+            background: #FDFBD4; 
+            border-left: 5px solid #636b2f; 
+            border-radius: 4px; 
+            color: #636b2f;
+            font-weight: bold;
+        }
+
         input[type="text"] { padding: 8px; width: 280px; border: 1px solid #ddd; border-radius: 4px; font-size: 15px; }
         
-        /* Ajuste de espaçamento entre questões */
         .questao { margin-bottom: 15px; padding: 5px; }
         hr { border: 0; border-top: 1px solid #eee; margin: 15px 0; }
         
-        .enunciado { font-weight: bold; margin-bottom: 5px; color: #2c3e50; font-size: 15px; }
+        .enunciado { font-weight: bold; margin-bottom: 5px; color: #636b2f; font-size: 15px; }
         .alternativas { list-style: none; padding: 0; margin: 0; }
         .alternativas li { margin-bottom: 2px; padding: 3px 8px; border-radius: 4px; display: flex; align-items: center; font-size: 14px; transition: 0.2s; }
         
@@ -22,16 +41,43 @@
         .certo { color: #27ae60 !important; background-color: #eafaf1; }
         .errado { color: #e74c3c !important; background-color: #fdedec; }
         
-        button { background-color: #1a73e8; color: white; border: none; padding: 12px; font-size: 16px; border-radius: 6px; cursor: pointer; width: 100%; margin-top: 20px; font-weight: bold; }
-        button:hover { background-color: #1557b0; }
+        button { 
+            background-color: #FDFBD4; 
+            color: #636b2f; 
+            border: 2px solid #636b2f; /* Adicionado borda para melhor definição no botão claro */
+            padding: 12px; 
+            font-size: 16px; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            width: 100%; 
+            margin-top: 20px; 
+            font-weight: bold; 
+            transition: 0.3s;
+        }
+        button:hover { background-color: #F0ED9C; }
         
-        #resultado { margin-top: 25px; padding: 15px; font-size: 20px; text-align: center; border-radius: 8px; display: none; font-weight: bold; }
+        #resultado { 
+		margin-top: 25px; 
+		padding: 15px; 
+		font-size: 20px; 
+		text-align: center; 
+		border: 2px solid #636b2f; /* Adicionado borda para melhor definição no botão claro */
+		border-radius: 8px; 
+		display: none; 
+		font-weight: bold; 
+		}
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Avaliação</br>formação e ação: LÓGICA COMPUTACIONAL</br>Prof. Reginaldo Polesi</h1>
+    <h1>
+        2026 - Form Ação | 1tri | Lógica Computacional<br>
+        Turma: NG - Rafael Roger Nora<br>
+        Simulando uma Avaliação<br>
+        <b>História e programação</b><br>
+        Prof. Reginaldo Polesi
+    </h1>
     
     <div class="campo-nome">
         <label for="nome"><strong>ESTUDANTE:</strong> </label>
@@ -161,7 +207,6 @@
         const questoes = document.querySelectorAll('.questao');
         let acertos = 0;
 
-        // Limpar feedbacks anteriores sem resetar a seleção do usuário
         document.querySelectorAll('.alternativas li').forEach(li => {
             li.classList.remove('certo', 'errado');
             const icon = li.querySelector('.feedback-icon');
@@ -177,7 +222,6 @@
                 if (selecionada.value === correta) {
                     acertos++;
                     liPai.classList.add('certo');
-                    // Inserção sem afetar o estado do input radio
                     liPai.insertAdjacentHTML('beforeend', ' <span class="feedback-icon">✓</span>');
                 } else {
                     liPai.classList.add('errado');
